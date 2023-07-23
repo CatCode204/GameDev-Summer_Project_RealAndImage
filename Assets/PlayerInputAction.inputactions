@@ -3,27 +3,69 @@
     "maps": [
         {
             "name": "Player",
-            "id": "34829437-778e-4ad0-99c1-7b3a0e41245d",
+            "id": "addf6e49-7fe1-437c-adde-8860080ed6f7",
             "actions": [
                 {
-                    "name": "Movement",
+                    "name": "Jump",
                     "type": "Button",
-                    "id": "ac696f2a-3cf8-4780-ac71-1b0a6b00283c",
+                    "id": "4ea91be5-a8fc-4f59-8c47-d77d8224937f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "ff59748f-045a-48f7-ac75-b01128986534",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
+                    "name": "AD",
+                    "id": "41376c0e-5ae3-4994-a231-b3b90341b6e7",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "0de5a427-1365-465f-8d97-48f1fce3e9ae",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "957ba2fb-abf8-4b03-a44d-36f7dffabe23",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
-                    "id": "f474c744-ce91-4dca-815a-f7dc35551ef8",
+                    "id": "5950e767-1fe0-4b9e-a820-26debeea9f23",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
