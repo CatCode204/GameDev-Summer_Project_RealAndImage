@@ -40,6 +40,7 @@ public class Movement : MonoBehaviour {
 
     public void Move(InputAction.CallbackContext value) {
         moveX = value.ReadValue<float>();
+        if (moveX != 0) transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * moveX,transform.localScale.y,transform.localScale.z);
     }
 
     public void Jump(InputAction.CallbackContext value) {
