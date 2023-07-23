@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour {
+    /* * * Constant Variables * * */
+    const string BOUNCING_ANIM = "Idle";
+
     [Header("Movement")]
     [SerializeField] private float _moveSpeed;
     
@@ -17,6 +20,7 @@ public class Movement : MonoBehaviour {
     /* * * Component Variables * * */
     private Rigidbody2D _rb;
     private Collider2D _col;
+    private Animation _anim;
 
     /* * * Control Variables * * */
     private float moveX;
@@ -25,6 +29,7 @@ public class Movement : MonoBehaviour {
     private void Awake() {
         _rb = this.GetComponent<Rigidbody2D>();
         _col = this.GetComponent<Collider2D>();
+        _anim = this.GetComponent<Animation>();
     }
 
     private void FixedUpdate() {
@@ -34,7 +39,7 @@ public class Movement : MonoBehaviour {
 
     private void Gravity() {
         if (_rb.velocity.y > 0 && !jumpPress) //Jump Cut
-            _rb.velocity += Vector2.up * Physics2D.gravity.y * _fallMultiplier * Time.fixedDeltaTime;
+            _rb.velocity += Vector2.up * Physics2D.gravity.y * _jumpMultiplier * _fallMultiplier * Time.fixedDeltaTime;
         else if (_rb.velocity.y < 0) _rb.velocity += Vector2.up * Physics2D.gravity.y * (_fallMultiplier - 1) * Time.fixedDeltaTime;
     }
 
@@ -45,8 +50,9 @@ public class Movement : MonoBehaviour {
 
     public void Jump(InputAction.CallbackContext value) {
         if (value.started && IsGround()) {
+            _anim.Play(BOUNCING_ANIM);
             jumpPress = true;
-            _rb.AddForce(Vector2.up * _jumpForce,ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.up * _jumpForce * _jumpMultiplier,ForceMode2D.Impulse);
         }
         else if (value.canceled) jumpPress = false;
     }
