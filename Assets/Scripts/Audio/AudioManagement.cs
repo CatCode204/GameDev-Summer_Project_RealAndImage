@@ -58,7 +58,7 @@ public class AudioManagement : MonoBehaviour {
             _backgroundSoruce.clip = _backgroundMusic[backgroundMusicIndex];
             _backgroundSoruce.Play();
             yield return new WaitForSeconds(_backgroundMusic[backgroundMusicIndex].length + _waitBackgroundAudioDuration);
-            backgroundMusicIndex = backgroundMusicIndex == _backgroundMusic.Length ? backgroundMusicIndex + 1 : 0;
+            backgroundMusicIndex = (backgroundMusicIndex == _backgroundMusic.Length) ? 0 : backgroundMusicIndex + 1;
         }
     }
 }
