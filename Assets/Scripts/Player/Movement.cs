@@ -98,6 +98,7 @@ public class Movement : MonoBehaviour {
             _anim.Play(BOUNCING_ANIM);
             jumpPress = true;
             counterJumpCoyote = 0;
+            AudioManagement.instance.PlaySFXSound("Jump");
             float jumpForceTotal = IsOnPlatform() ? _jumpForce + _bonusOnPlatformJumpForce : _jumpForce;
             _rb.AddForce(Vector2.up * (jumpForceTotal * _jumpMultiplier - _rb.velocity.y),ForceMode2D.Impulse);
         }
