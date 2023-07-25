@@ -109,9 +109,7 @@ public class Movement : MonoBehaviour {
     }
 
     private bool IsOnPlatform() {
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(_footCollider.bounds.center,_footCollider.bounds.size,0,Vector2.down,_extraHeightCheck,_jumpableLayerMask);
-        foreach(var hit in hits)
-            if (hit.collider.gameObject.CompareTag(PLATFORM_TAG)) return true;
-        return false;
+        RaycastHit2D hit = Physics2D.BoxCast(_footCollider.bounds.center,_footCollider.bounds.size,0,Vector2.down,_extraHeightCheck,_jumpableLayerMask);
+        return hit.collider != null && hit.collider.gameObject.tag == PLATFORM_TAG;
     }
 }
