@@ -70,6 +70,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Portal",
+            "id": "dd4639cf-1fd7-4fa5-baa5-f79669d5b157",
+            "actions": [
+                {
+                    "name": "Use",
+                    "type": "Button",
+                    "id": "0ad08403-cd48-4529-926b-af63a000877e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ce1c769c-4d64-4235-a726-599904ba681f",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
