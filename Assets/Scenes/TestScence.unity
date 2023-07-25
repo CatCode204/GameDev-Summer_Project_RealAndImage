@@ -775,7 +775,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _backgroundSoruce: {fileID: 1682642217}
   _sfxSource: {fileID: 235216976}
-  _backgroundMusic: []
+  _backgroundMusic:
+  - {fileID: 8300000, guid: ee96d392d23383949ad6ce35c21965c4, type: 3}
+  - {fileID: 8300000, guid: ae912de92929bf74a80aad15f5e82270, type: 3}
+  - {fileID: 8300000, guid: ed72abd2f4603a540a067c62bba884d6, type: 3}
+  - {fileID: 8300000, guid: 4f6777541de14c846866d03880a842e6, type: 3}
+  - {fileID: 8300000, guid: 58a65c1bcdb5d214e80d9a76d2edd92d, type: 3}
+  - {fileID: 8300000, guid: 5725c6781a8d5bd43837fb4470bfad40, type: 3}
+  - {fileID: 8300000, guid: 3da4e6a188d8ee546aa8bb9880ee49b0, type: 3}
   _sfxSound:
   - name: Jump
     audio: {fileID: 8300000, guid: 4a213e116bf25d24e80042f27d6a87e6, type: 3}
