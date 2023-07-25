@@ -17,7 +17,7 @@ public class PortalController : MonoBehaviour {
     }
 
     public void OnUse(InputAction.CallbackContext value) {
-        if (value.started) Debug.Log("STARTED");
+        Debug.Log("OK");
     }
 
     private void OnDrawGizmos() {
