@@ -11,4 +11,9 @@ public class ScenceController : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         } else Destroy(gameObject);
     }
+
+    public void NextLevel() {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerController.instance.OnScenceLoad();
+    }
 }

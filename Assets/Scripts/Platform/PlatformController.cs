@@ -20,7 +20,7 @@ public class PlatformController : MonoBehaviour {
 
     /* * * Processing Variables * * */
     private Vector2[] destinationPos;
-    public float waitCounter;
+    private float waitCounter;
 
     /* * * Component Variables * * */
     private Rigidbody2D _rb;

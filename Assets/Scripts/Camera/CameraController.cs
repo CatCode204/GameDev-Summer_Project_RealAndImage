@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
+    /* * * Singleton Variable * * */
+    public static CameraController instance;
+
     [Header("Setting")]
     [SerializeField] private Transform playerTrans;
     [Range(0,1)] [SerializeField] private float _smoothTime;
@@ -22,6 +25,10 @@ public class CameraController : MonoBehaviour {
     private Camera _cam;
 
     private void Awake() {
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else Destroy(gameObject);
         _cam = Camera.main;
     }
 

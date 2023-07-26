@@ -215,4 +215,3 @@ MonoBehaviour:
   _moveableLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  waitCounter: 0

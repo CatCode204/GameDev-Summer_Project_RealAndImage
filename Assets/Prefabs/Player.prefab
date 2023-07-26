@@ -4880,7 +4880,6 @@ GameObject:
   m_Component:
   - component: {fileID: 579332108}
   - component: {fileID: 579332109}
-  - component: {fileID: 1044741204}
   m_Layer: 3
   m_Name: Anchor
   m_TagString: Untagged
@@ -4924,23 +4923,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!111 &1044741204
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579332107}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: b16c8bc53eb838444b9ae1fc2239cdd2, type: 2}
-  - {fileID: 7400000, guid: bc4971c114c79d54e9c5d725e8c5569c, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &804270525
 GameObject:
   m_ObjectHideFlags: 0
@@ -5398,7 +5380,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1256
+  m_InstanceId: -151628
 --- !u!114 &4023536692985178263
 MonoBehaviour:
   m_ObjectHideFlags: 0
