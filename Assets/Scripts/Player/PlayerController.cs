@@ -37,11 +37,13 @@ public class PlayerController : MonoBehaviour {
         _playerInput.enabled = false;
     }
 
-    public void Spawn() {
+    public IEnumerator Spawn() {
         DisablePlayerInput();
-        UIController.instance.FadeIn(1);
+        UIController.instance.FadeIn();
+        yield return new WaitForSeconds(1);
         transform.position = _spawnPosition;
-        UIController.instance.FadeOut(1);
+        UIController.instance.FadeOut();
+        yield return new WaitForSeconds(1);
         EnablePlayerInput();
     }
 }

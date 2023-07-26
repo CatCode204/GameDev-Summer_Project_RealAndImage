@@ -12,10 +12,15 @@ public class ScenceController : MonoBehaviour {
         } else Destroy(gameObject);
     }
 
-    public void NextLevel() {
-        UIController.instance.FadeIn(1);
+    private IEnumerator Next_Level_IENum() {
+        UIController.instance.FadeIn();
+        yield return new WaitForSeconds(1);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         PlayerController.instance.OnScenceLoad();
-        UIController.instance.FadeOut(1);
+        UIController.instance.FadeOut();
+    }
+    
+    public void NextLevel() {
+        StartCoroutine(Next_Level_IENum());
     }
 }

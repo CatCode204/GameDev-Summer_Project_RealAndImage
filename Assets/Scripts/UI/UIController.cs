@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour {
     /* *  * Constant Variables * * */
-    const string FADE_IN_ANIM = "FadeIn";
-    const string FADE_OUT_ANIM = "FadeOut";
+    const string FADE_IN_ANIM = "Fade_In";
+    const string FADE_OUT_ANIM = "Fade_Out";
     public static UIController instance;
 
     [Header("Screen Transition")]
@@ -19,12 +19,22 @@ public class UIController : MonoBehaviour {
     }
 
     public IEnumerator FadeIn(float seconds) {
-        _animScreenTransition.SetTrigger(FADE_IN_ANIM);
+        _animScreenTransition.Play(FADE_IN_ANIM);
         yield return new WaitForSeconds(seconds);
     }
 
     public IEnumerator FadeOut(float seconds) {
-        _animScreenTransition.SetTrigger(FADE_OUT_ANIM);
+        _animScreenTransition.Play(FADE_OUT_ANIM);
         yield return new WaitForSeconds(seconds);
+    }
+
+    public void FadeIn() {
+        _animScreenTransition.Play(FADE_IN_ANIM);
+        Debug.Log("Fade In");
+    }
+
+    public void FadeOut() {
+        _animScreenTransition.Play(FADE_OUT_ANIM);
+        Debug.Log("Fade Out");
     }
 }
