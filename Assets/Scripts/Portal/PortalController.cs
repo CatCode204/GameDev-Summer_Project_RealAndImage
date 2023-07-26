@@ -31,10 +31,9 @@ public class PortalController : MonoBehaviour {
         Rigidbody2D playerRb = playerObj.GetComponent<Rigidbody2D>();
         GameObject anchorChild = playerObj.transform.Find(PLAYER_ANCHOR_TAG).gameObject;
         Animator playerAnim = anchorChild.GetComponent<Animator>();
-        PlayerInput playerInput = playerObj.GetComponent<PlayerInput>();
         TrailRenderer playerTailRen = playerObj.GetComponent<TrailRenderer>();
+        PlayerController.instance.DisablePlayerInput();
         playerRb.velocity = Vector2.zero;
-        playerInput.enabled = false;
         playerTailRen.enabled = false;
         StartCoroutine(MoveToCenter(playerObj));
         playerRb.simulated = false;
@@ -44,7 +43,7 @@ public class PortalController : MonoBehaviour {
         yield return new WaitForSeconds(1);
         playerRb.simulated = true;
         playerTailRen.enabled = true;
-        playerInput.enabled = true;
+        PlayerController.instance.EnablePlayerInput();
     } 
 
     private IEnumerator MoveToCenter(GameObject playerObj) {

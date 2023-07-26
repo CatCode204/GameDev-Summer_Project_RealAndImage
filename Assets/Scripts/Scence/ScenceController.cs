@@ -13,7 +13,9 @@ public class ScenceController : MonoBehaviour {
     }
 
     public void NextLevel() {
+        UIController.instance.FadeIn(1);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         PlayerController.instance.OnScenceLoad();
+        UIController.instance.FadeOut(1);
     }
 }
